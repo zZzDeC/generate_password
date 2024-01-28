@@ -9,6 +9,9 @@ def caesar_cipher(text, shift, direction, language):
         print("Неподдерживаемый язык алфавита.")
         return None
 
+    if direction == 'дешифрование':
+        shift *= -1
+
     for char in text:
         if char.lower() in alphabet:
             index = (alphabet.index(char.lower()) + shift) % len(alphabet)
